@@ -1,6 +1,13 @@
 <div id="poda">
   <div id="main">
-    <input placeholder="Search..." type="text" name="text" class="input" />
+    <input
+      placeholder="Search..."
+      type="text"
+      name="text"
+      class="input"
+      (keyup.enter)="searchTag()"
+      #txtTagInput
+    />
     <div id="input-mask"></div>
     <div id="pink-mask"></div>
     <div class="filterBorder"></div>
