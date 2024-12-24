@@ -1,16 +1,30 @@
 import { Component } from '@angular/core';
+import { GifsService } from '../../services/gifs.service';
 
 @Component({
   selector: 'app-search-tag',
   standalone: false,
   template: `
-    <a class="codepen-button"
-      ><span>{{ tag }}</span></a
-    >
+    <div class="history-container">
+      <button
+        *ngFor="let tags of tag"
+        class="codepen-button"
+        (click)="searchTag(tags)"
+      >
+        <span>{{ tags | titlecase }}</span>
+      </button>
+    </div>
   `,
   styleUrl: './search-tag.component.css',
 })
 export class SearchTagComponent {
-  tag = 'angular';
-  constructor() {}
+  constructor(private gifsService: GifsService) {}
+
+  get tag() {
+    return this.gifsService.tagsHistory;
+  }
+
+  searchTag(tag: string) {
+    this.gifsService.searchTag(tag);
+  }
 }

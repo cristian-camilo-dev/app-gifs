@@ -1,3 +1,10 @@
+.history-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 1rem;
+}
 .codepen-button {
   display: inline-block;
   cursor: pointer;
