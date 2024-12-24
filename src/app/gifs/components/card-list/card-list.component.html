@@ -1,12 +1,13 @@
 <div class="container">
   <div *ngFor="let gif of gifs" class="container__card">
     <div class="card">
-      <img [src]="gif.images.downsized_medium.url" [alt]="gif.title" />
+      <div class="card__image">
+        <img [src]="gif.images.downsized_medium.url" [alt]="gif.alt_text" />
+      </div>
       <div class="container__card__text">
         <h4>
           <b>{{ gif.title }}</b>
         </h4>
-        <p>Architect & Engineer</p>
       </div>
     </div>
   </div>
